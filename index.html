@@ -1,64 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+    <head>
+        <title>Weather Dashboard</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>🌤️ Weather Dashboard with great features</h1>
+                <p>Get weather information for any city</p>
+            </header>
 
-<body>
-    <div class="container">
-        <header>
-            <h1>🌤️ Weather Dashboard</h1>
-            <p>Get weather information for any city</p>
-        </header>
+            <div class="search-section">
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Enter city name..."
+                />
+                <button id="search-btn">Search</button>
+                <button id="current-location-btn">Use Current Location</button>
+            </div>
 
-        <div class="search-section">
-            <input type="text" id="city-input" placeholder="Enter city name..." />
-            <button id="search-btn">Search</button>
-            <button id="current-location-btn">Use Current Location</button>
-        </div>
+            <div id="output" style="margin-top: 20px"></div>
 
-        <div id="output" style="margin-top: 20px;"></div>
+            <div class="loading" id="loading-indicator" style="display: none">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
 
-        <div class="loading" id="loading-indicator" style="display: none;">
-            <div class="spinner"></div>
-            <p>Loading weather data...</p>
-        </div>
+            <div
+                class="error-message"
+                id="error-message"
+                style="display: none"
+            ></div>
 
-        <div class="error-message" id="error-message" style="display: none;"></div>
+            <div
+                class="weather-display"
+                id="weather-display"
+                style="display: none"
+            >
+                <div class="current-weather">
+                    <h2 id="city-name"></h2>
+                    <div class="temperature" id="temperature"></div>
+                    <div class="condition" id="condition"></div>
+                    <div class="details">
+                        <span id="humidity"></span>
+                        <span id="wind-speed"></span>
+                        <span id="feels-like"></span>
+                    </div>
+                </div>
 
-        <div class="weather-display" id="weather-display" style="display: none;">
-            <div class="current-weather">
-                <h2 id="city-name"></h2>
-                <div class="temperature" id="temperature"></div>
-                <div class="condition" id="condition"></div>
-                <div class="details">
-                    <span id="humidity"></span>
-                    <span id="wind-speed"></span>
-                    <span id="feels-like"></span>
+                <div class="forecast">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-grid" id="forecast-grid"></div>
                 </div>
             </div>
 
-            <div class="forecast">
-                <h3>5-Day Forecast</h3>
-                <div class="forecast-grid" id="forecast-grid"></div>
+            <div class="recent-searches">
+                <h3>Recent Searches</h3>
+                <div class="search-history" id="search-history"></div>
+            </div>
+
+            <div class="multi-city">
+                <h3>Compare Cities</h3>
+                <button id="compare-btn">Compare Popular Cities</button>
+                <div class="city-comparison" id="city-comparison"></div>
             </div>
         </div>
 
-        <div class="recent-searches">
-            <h3>Recent Searches</h3>
-            <div class="search-history" id="search-history"></div>
-        </div>
-
-        <div class="multi-city">
-            <h3>Compare Cities</h3>
-            <button id="compare-btn">Compare Popular Cities</button>
-            <div class="city-comparison" id="city-comparison"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>
